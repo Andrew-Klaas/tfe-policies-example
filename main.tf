@@ -1,10 +1,10 @@
 terraform {
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "hashicorp-v2"
+    organization = "aklaas_v2"
 
     workspaces {
-      name = "tfe-policies-example"
+      name = "sentinel-policies"
     }
   }
 }
@@ -54,6 +54,7 @@ resource "tfe_policy_set" "global" {
   ]
 }
 
+/*
 resource "tfe_policy_set" "production" {
   name         = "production"
   description  = "Policies that should be enforced on production infrastructure."
@@ -96,6 +97,7 @@ resource "tfe_policy_set" "sentinel" {
     "${local.workspaces["tfe-policies"]}",
   ]
 }
+*/
 
 # Test/experimental policies:
 
