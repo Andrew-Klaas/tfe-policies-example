@@ -36,8 +36,8 @@ locals {
   workspaces = "${data.tfe_workspace_ids.all.external_ids}" # map of names to IDs
 }
 
-resource "tfe_policy_set" "global" {
-  name         = "global"
+resource "tfe_policy_set" "global_v2" {
+  name         = "global_v2"
   description  = "Policies that should be enforced on ALL infrastructure."
   organization = "${var.tfe_organization}"
   global       = true
